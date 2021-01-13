@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+
+<script>
+    'use strict'
+    
+    function loadScript(src, callback) {
+        // crea un nuovo <script> tag e lo aggiunge alla pagina dopo di questo
+        // quando questo script è completato viene esguito lo script successivo
+        // a questo script viene fornito un src, che è  src (argomento di questa funzione)
+
+        let script = document.createElement('script') // (crea un nuovo script)
+        script.src = src // (definisce l'src dello script con l'argeomtno src) (ci vuole un pòperchè lo script venga caricato)
+
+        script.onload = () => callback(null, script) // in questo modo eseguo la funzione passata come callback quando lo script è stato caricato completamente
+        // questo serve per poter utilizzare una varaibile o funzione dello script senza errori, perchè magari non è finito il suo caricaemtno
+        script.onerror = () => callback(new Error(`Script load error for ${src}`)) // nel caso in cui il caricamento dello script risulti errato
+
+
+
+        document.head.append(script) // (aggiunge lo script al codice)
+    }
+
+    // x evitare di creare la priamide del destino si possono spezzare le varie funzioni step1, step2, ....
+    loadScript('./file11_1.js', step1);
+
+    function step1(error, script) {
+        if (error) {
+            console.log(error)
+        } else {
+            alert(`Cool, the script ${script.src} is loaded`)
+            alert(`La variabile a dello script appena caricato vale ${a}`)
+
+            loadScript('../sezione2/f2_2.js', step2)
+        }
+    }
+    
+    function step2(error, script) {
+        if (error) {
+            console.log(error)
+        } else {
+            alert(`Cool, the second script is loaded`)
+        }
+    }
+</script>
+
+    <p>...After the script.</p>
+
+</body>
+
+</html>
