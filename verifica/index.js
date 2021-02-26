@@ -377,7 +377,7 @@ const es13 = () => {
     console.log(resBody)
     const reqData = resBody.data
     const risultato = reqData.map((e, i,  arr) => {
-      if (e != arr[arr.length-1]) {
+      if (i != arr.length-1) {
         return (e + arr[i+1])
       }
       return e
@@ -976,6 +976,48 @@ const es30 = () => {
   .catch(err => console.log(err))
 }
 
+/*const es31 = () => {
+  fetch("http://localhost:8080/esercizi/31", {
+      headers: {
+        "x-data": "true"
+      },
+  })
+  .then(res => res.json())
+  .then(resBody => {
+    console.log(resBody)
+    const reqData = resBody.data
+    const risultato = reqData.reduce((acc, p) => {
+      if (p.nome[0] === "A" || p.nome[0] === "E" || p.nome[0] === "I" || p.nome[0] === "O" || p.nome[0] === "U" ) {
+          acc.nomi ++
+      } else if (p.cognome[0] === "A" || p.cognome[0] === "E" || p.cognome[0] === "I" || p.cognome[0] === "O" || p.cognome[0] === "U" ) {
+        acc.cognomi ++
+      }
+      return acc
+    }, {
+      nomi: 0,
+      cognomi: 0
+    })
+    const re = JSON.stringify({
+      data : risultato
+    })
+
+    console.log(re)
+
+    return fetch("http://localhost:8080/esercizi/31", {
+      method: "post",
+      body: JSON.stringify({
+        "data": re
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }  
+    })
+  })
+  .then(res => res.json())
+  .then(resBody => console.log(resBody))
+  .catch(err => console.log(err))
+}*/
+
 const voto = () => {
   fetch("http://localhost:8080/voto", {
     method : "get",
@@ -1001,7 +1043,7 @@ const voto = () => {
 //es10()
 //es11()
 //es12()
-////////////es13()
+//es13()
 //es14()
 //es15()
 //es16()
@@ -1019,4 +1061,4 @@ const voto = () => {
 //es28()
 //es29()
 //es30()
-//voto()
+voto()
