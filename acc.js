@@ -14,17 +14,4 @@ const accreditamento = () => {
   .then(resBody => console.log(resBody))
   .catch(err => console.log(err))
 }
-//accreditamento()
-
-const voto = () => {
-  fetch("http://192.168.1.231:8080/voto", {
-    method : "get",
-    headers : {
-      "x-data": "true"
-    },
-  })
-  .then(res => res.json())
-  .then(r => console.log(r))
-  .catch(err => console.log(err))
-}
-//voto()
+accreditamento()
