@@ -28,7 +28,7 @@ const es1 = () => {
     .then(resBody => console.log(resBody))
     .catch(err => console.log(err))
 }
-//es1()
+es1()
 
 const voto = () => {
     fetch("http://192.168.1.231:8080/voto", {
@@ -41,4 +41,4 @@ const voto = () => {
     .then(r => console.log(r))
     .catch(err => console.log(err))
 }
-//voto()
+voto()
