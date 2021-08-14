@@ -25,6 +25,10 @@ db.connect((err) => {
 
 
 //pages
+app.get('/', (req, res) => {
+  res.redirect('/login');
+});
+
 app.get('/home', (req, res) => {
   res.sendFile(__dirname + '/pages/home.html');
 });
@@ -38,7 +42,7 @@ app.post('/login', (req, res) => {
   let password = req.body.password;
 
   if (email && password) {
-		db.query('SELECT * FROM students WHERE email = ? AND password = ?', [email, password], function(error, results, fields) {
+		db.query('SELECT * FROM students WHERE email = ? AND password = ?', [email, password], (error, results, fields) => {
 			if (results.length > 0) {
 				//request.session.loggedin = true;
 				//request.session.username = username;
@@ -53,6 +57,10 @@ app.post('/login', (req, res) => {
 
 
 
+//deve stare ultimo
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/pages/pageNotFound.html');
+});
 
 
 const port = 3000 
