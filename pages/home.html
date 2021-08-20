@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <title>Home</title>
-    
+
     <script>
     </script>
 
@@ -34,6 +34,7 @@
       .section {
         padding-top:70px;
         padding-bottom:70px;
+        padding-left: 60px;
       }
 
       #footer {
@@ -49,7 +50,8 @@
       #footer-title {
         margin-bottom: 20px;
       }
-          </style>
+          
+      </style>
 
   </head>
 
@@ -69,6 +71,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#section3">Voti</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section4">Media voti</a>
+        </li>
         <a class="nav-link">|</a>
         <li class="nav-item">
           <a class="nav-link" href="#footer">Contattaci</a>
@@ -80,29 +85,111 @@
 
     <div id="section1" class="section container-fluid">
       <h1>Alunni</h1>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <!--name, classroom, email-->
     </div>
 
     <hr color="#2980b9">
 
     <div id="section2" class="section container-fluid">
       <h1>Docenti</h1>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <!--name, materia-->
     </div>
 
     <hr color="#2980b9">
+
+    <!-- qua bisogna fare una query in cui si chiamano con un select tutti i voti e anche i rispettivi docenti e materie e poi dove alla fine si ordina tutto per data-->
 
     <div id="section3" class="section container-fluid">
-      <h1>Voti</h1>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <div class="container">
+        <h2>VOTI</h2>
+        <p>Questi sono i tuoi voti ordinati in base alla data di inserimento:</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Voto</th>
+              <th>Materia</th>
+              <th>Professore</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>02.12.20</td>
+              <td>7</td>
+              <td>matematica</td>
+              <td>Mauro Strozzi</td>
+            </tr>
+            <tr>
+              <td>03.0.21</td>
+              <td>10</td>
+              <td>matematica</td>
+              <td>Mauro Strozzi</td>
+            </tr>
+            <tr>
+              <td>21.02.21</td>
+              <td>9</td>
+              <td>informatica</td>
+              <td>Giovanni Bruno</td>
+            </tr>
+            <tr>
+              <td>02.04.21</td>
+              <td>8.5</td>
+              <td>informatica</td>
+              <td>Giovanni Bruno</td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <hr color="#2980b9">
 
-    <div id="footer" class="container-fluid">
+
+
+    <!--r sta per risultato della query che ottiene i voti di un alunno in quella materia-->
+    <!-- questa sarebbe la QUERY "SELECT VOTO FROM marks WHERE subject= *** && userID = ***"
+
+      int sum, media
+      function media(subject) { 
+        for (int c; c < r.lenght; c++) {
+          sum += c
+        }
+        media = sum/r.lenght
+        return media
+      }
+      
+    -->
+    <div id="section4" class="section container-fluid">
+      <div class="container">
+        <h2>MEDIA VOTI</h2>
+        <p>Queste sono le medie voto di ciascuna materia:</p>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Media</th>
+              <th>Materia</th>
+              <th>Professore</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8.5</td>
+              <td>Matematica</td>
+              <td>Mauro Strozzi</td>
+            </tr>
+            <tr>
+              <td>8.75</td>
+              <td>informatica</td>
+              <td>Giovanni Bruno</td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr color="#2980b9">
+
+    <div id="footer" class="container-fluid text-center">
       <h3 id="footer-title">Contatti</h3>
       <p><b>Indirizzo:</b> Piazzetta Pignedoli 1, RE</p>
       <p><b>Email:</b> segreteria@liceoariostospallanzani-re.edu.it</p>
