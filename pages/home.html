@@ -14,14 +14,100 @@
     </script>
 
     <style>
-    </style>
+      .navbar {
+        background-color: #3B3B98;
+        height: 65px;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+      }     
+      
+      hr {
+        margin-top: 1px;
+        width: 90%;
+        size: 2px;
+      }
+
+      .title {
+        padding-right: 20px;
+      }
+
+      .section {
+        padding-top:70px;
+        padding-bottom:70px;
+      }
+
+      #footer {
+        background-color: #dfe4ea;
+        border-radius: 8px;
+        width: 95%;
+        padding: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-bottom: 15px;
+      }
+
+      #footer-title {
+        margin-bottom: 20px;
+      }
+          </style>
 
   </head>
 
 
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+      <h3 class="title text-light">Registro Elettronico</h3>
+      
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#section1">Alunni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2">Docenti</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section3">Voti</a>
+        </li>
+        <a class="nav-link">|</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Contattaci</a>
+        </li>
+      </ul>
+    </nav>
 
-    <h1>HOME</h1>
+    <br>
+
+    <div id="section1" class="section container-fluid">
+      <h1>Alunni</h1>
+      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
+
+    <hr color="#2980b9">
+
+    <div id="section2" class="section container-fluid">
+      <h1>Docenti</h1>
+      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
+
+    <hr color="#2980b9">
+
+    <div id="section3" class="section container-fluid">
+      <h1>Voti</h1>
+      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div>
+
+    <hr color="#2980b9">
+
+    <div id="footer" class="container-fluid">
+      <h3 id="footer-title">Contatti</h3>
+      <p><b>Indirizzo:</b> Piazzetta Pignedoli 1, RE</p>
+      <p><b>Email:</b> segreteria@liceoariostospallanzani-re.edu.it</p>
+      <p><b>Telefono:</b> 0522 4738292</p>
+    </div>
 
   </body>
 </html>

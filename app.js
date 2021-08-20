@@ -39,6 +39,7 @@ app.get('/', (req, res) => {
 
 app.get('/home', (req, res) => {
   if (req.session.loggedin) {
+
     res.sendFile(__dirname + '/pages/home.html');
 	} else {
 		res.sendFile(__dirname + '/pages/errors/notLoggedIn.html');
@@ -57,6 +58,7 @@ app.post('/login', (req, res) => {
 		db.query('SELECT * FROM students WHERE email = ? AND password = ?', [email, password], (error, results, fields) => {
 			if (results.length > 0) {
 				req.session.loggedin = true;
+        let ID = results[0].ID;
 				res.redirect('/home');
 			} else {
         res.redirect('back');
